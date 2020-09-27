@@ -118,6 +118,7 @@ class MainWindow(QMainWindow):
         self.window_layout.addWidget(QLabel(self.input_filename), 0, 1, Qt.AlignTop)
         self.window_layout.addWidget(QLabel(self.output_filename), 1, 1, Qt.AlignTop)
 
+    # @classmethod
     def run(self):
         """
             Runs parser to convert to CSV
