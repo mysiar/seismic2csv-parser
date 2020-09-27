@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import (
     QGridLayout,
     QLabel,
     QWidget,
+    QStatusBar,
 )
 
 import app_info
@@ -53,6 +54,7 @@ class MainWindow(QMainWindow):
         open_input_action = QAction(QIcon(os.path.join("icons", "folder-open-document.png")), "Open Input file", self)
         open_input_action.setShortcut(QKeySequence("Ctrl+o"))
         open_input_action.triggered.connect(self.open_input_file)
+        open_input_action.setStatusTip("Open Input file for conversion")
         toolbar.addAction(open_input_action)
 
         toolbar.addSeparator()
@@ -60,6 +62,7 @@ class MainWindow(QMainWindow):
         run_action = QAction(QIcon(os.path.join("icons", "burn.png")), "Run", self)
         run_action.setShortcut(QKeySequence("Ctrl+r"))
         run_action.triggered.connect(self.run)
+        run_action.setStatusTip("Run conversion")
         toolbar.addAction(run_action)
 
         toolbar.addSeparator()
@@ -74,6 +77,7 @@ class MainWindow(QMainWindow):
         quit_action = QAction(QIcon(os.path.join("icons", "cross.png")), "Quit", self)
         quit_action.setShortcut(QKeySequence("Ctrl+q"))
         quit_action.triggered.connect(qApp.quit)
+        quit_action.setStatusTip("Quit the application")
         toolbar.addAction(quit_action)
 
         # MENU
@@ -85,6 +89,8 @@ class MainWindow(QMainWindow):
 
         help_menu = menu.addMenu("&Help")
         help_menu.addAction(about_action)
+
+        self.setStatusBar(QStatusBar(self))
 
         # LAYOUT
         self.window_layout = QGridLayout()
