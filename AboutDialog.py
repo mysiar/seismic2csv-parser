@@ -46,6 +46,7 @@ class AboutDialog(QDialog):
         link_label = QLabel('<a href="' + app_info.AUTHOR_WEB + '">' + app_info.AUTHOR_WEB + '</a>')
         link_label.setOpenExternalLinks(True)
         layout.addWidget(link_label)
+        layout.addWidget(QLabel("September 2020"))
 
         for i in range(0, layout.count()):
             layout.itemAt(i).setAlignment(Qt.AlignHCenter)

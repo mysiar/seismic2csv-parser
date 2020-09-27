@@ -70,6 +70,7 @@ class MainWindow(QMainWindow):
         about_action = QAction(QIcon(os.path.join("icons", "information-button.png")), "About", self)
         about_action.setShortcut(QKeySequence("Ctrl+i"))
         about_action.triggered.connect(about)
+        about_action.setStatusTip("About application")
         toolbar.addAction(about_action)
 
         toolbar.addSeparator()
